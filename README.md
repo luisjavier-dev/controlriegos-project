@@ -166,17 +166,25 @@ Las interfaces web permiten:
 - Visualizar el nivel del pantano
 - Monitorizar la profundidad de la acequia
 - Consultar la apertura de cada tajadera
-- Actuar sobre la apertura y cierre de las compuertas
+<p align="center">
+  <img src="/images/5-EstadoTajaderas1.png" width="20%">
+  <img src="/images/6-EstadoTajaderas2.png" width="20%">
+</p>
 
+- Actuar sobre la apertura y cierre de las compuertas
 Las actualizaciones se realizan en tiempo real (≈1 segundo), proporcionando una supervisión continua del sistema.
 
 #### Control de tajaderas
 
-![Control Tajaderas](/images/.png)
+<p align="center">
+  <img src="/images/9-Compuerta.png" width="20%">
+</p>
 
 #### Monitorización de niveles
 
-![Niveles de agua](./img/niveles_iphone.png)
+<p align="center">
+  <img src="/images/7-NivelAcequia.png" width="20%">
+</p>
 
 ---
 
@@ -184,10 +192,13 @@ Las actualizaciones se realizan en tiempo real (≈1 segundo), proporcionando un
 
 Uno de los aspectos clave del sistema es su capacidad de autoregulación.
 
-El operario puede establecer un nivel objetivo de agua en la acequia. A partir de este valor, el sistema ajusta automáticamente la apertura de las tajaderas:
+El operario puede establecer un nivel objetivo de agua en la acequia de salida. A partir de este valor, el sistema ajusta automáticamente la apertura de las tajaderas:
 
 - Si el nivel supera el objetivo → cierre progresivo
 - Si el nivel es inferior → apertura progresiva
+<p align="center">
+  <img src="/images/8-Almenara1.png" width="20%">
+</p>
 
 #### Ejemplo de funcionamiento:
 
