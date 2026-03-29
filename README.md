@@ -145,3 +145,60 @@ Además:
 A continuación se muestra el esquema completo de la infraestructura, incluyendo enlaces de red, tipo de conexión y dispositivos implicados:
 
 ![Esquema de red](/images/ConectividadRiegos.png)
+
+
+
+## ⚙️ Funcionamiento del sistema
+
+El sistema permite al operario (guarda) supervisar y controlar remotamente el estado de las tajaderas y los niveles de agua sin necesidad de desplazarse físicamente entre las distintas zonas.
+
+A través de una interfaz web accesible desde el móvil, se puede visualizar y actuar sobre el sistema en tiempo real.
+
+---
+
+### 📱 Interfaz de control
+
+Las interfaces web permiten:
+
+- Visualizar el nivel del pantano
+- Monitorizar la profundidad de la acequia
+- Consultar la apertura de cada tajadera
+- Actuar sobre la apertura y cierre de las compuertas
+
+Las actualizaciones se realizan en tiempo real (≈1 segundo), proporcionando una supervisión continua del sistema.
+
+#### Control de tajaderas
+
+![Control Tajaderas](/images/.png)
+
+#### Monitorización de niveles
+
+![Niveles de agua](./img/niveles_iphone.png)
+
+---
+
+### 🤖 Regulación automática
+
+Uno de los aspectos clave del sistema es su capacidad de autoregulación.
+
+El operario puede establecer un nivel objetivo de agua en la acequia. A partir de este valor, el sistema ajusta automáticamente la apertura de las tajaderas:
+
+- Si el nivel supera el objetivo → cierre progresivo
+- Si el nivel es inferior → apertura progresiva
+
+#### Ejemplo de funcionamiento:
+
+- Nivel objetivo: **180 cm**
+- Nivel actual: **185 cm** → cierre de 1 cm por ciclo
+- Nivel actual: **175 cm** → apertura de 1 cm por ciclo
+
+Este enfoque permite mantener un nivel estable sin necesidad de intervención constante.
+
+---
+
+### 🎯 Resultado
+
+- Eliminación de desplazamientos continuos entre zonas
+- Mayor precisión en el control del nivel de agua
+- Supervisión remota en tiempo real
+- Automatización parcial del sistema hidráulico
