@@ -193,7 +193,7 @@ Para cerrar del todo, simplemente se pulsa el boton web "Cerrar Totalmente"
 </p>
 
 #### Programación horaria de apertura
-Permite programar como máximo hasta dos días furuos la apertura y cierre de las compuertas del panatano.
+Permite programar como máximo hasta dos días futuros la apertura y cierre de las compuertas del panatano.
 <p align="center">
   <img src="/images/3-ProgramacionHoraria.png" width="20%">
 </p>
