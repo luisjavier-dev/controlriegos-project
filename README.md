@@ -138,8 +138,8 @@ Además:
 - Sistema aislado de accesos externos directos
 - SSID WiFi LAN oculta.
 - Pantalla de login en la app con distintos permisos según roles.
-  ![Pantalla Login](/images/Login.png)
-  <img src="/images/Login.png" width="300">
+  ![Pantalla Login](/images/1-Login.png)
+  <img src="/images/1-Login.png" width="300">
 
 ---
 
