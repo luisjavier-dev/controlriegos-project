@@ -1,12 +1,14 @@
 # 💧 Sistema IoT de Control de Riego – Villamayor (2018)
 
 Proyecto de automatización y monitorización remota de un sistema de riego basado en compuertas motorizadas, desarrollado en un entorno real con infraestructura limitada y control originalmente presencial y cobertura móvil justa.
+Toda la funcionalidad que aquí se detalla, fue la que el Sindicato de riegos de Villamayor exigía. Tanto desde un principio, como con el paso del tiempo y mientras se desarrollaba el sistema, se fueron incrementando sus peticiones.
+Sistema hecho totalmente a la medida de sus necesidades.
 
 ---
 
 ## 🧭 Contexto
 
-El sistema original requería supervisión manual continua por parte de un operario, con controles distribuidos en distintas zonas físicas separadas entre sí.
+El sistema original requería supervisión manual continua por parte de un operario, con controles distribuidos en distintas zonas físicas separadas entre sí. Armarios eléctricos con selectores de maniobra (subir / bajar compuertas)
 
 - Zona Pantano:
   - 3 compuertas motorizadas
@@ -83,7 +85,7 @@ Ambas zonas se conectan como clientes VPN, permitiendo acceso seguro desde cualq
 Este nodo actúa como punto central del sistema:
 
 - **Raspberry Pi 3**
-  - Ejecuta la lógica del sistema en Python
+  - Ejecuta la lógica del sistema en Python y transmite por USB a Arduino los movimientos de motores.
   - Cliente OpenVPN
   - Publica datos al servidor MQTT y pasan a web
   - Gestiona la comunicación con Arduino vía USB
@@ -109,7 +111,7 @@ Nodo remoto conectado al principal:
   - Comunicación con Arduino
 
 - **Conectividad**
-  - Enlace inalámbrico directo con la Zona Pantano mediante Ubiquiti
+  - Enlace inalámbrico directo con la Zona Pantano mediante antena Ubiquiti
 
 - **Arduino Uno**
   - Lectura de sensor de nivel de acequia
@@ -175,26 +177,29 @@ Las interfaces web permiten:
 Las actualizaciones se realizan en tiempo real (≈1 segundo), proporcionando una supervisión continua del sistema.
 
 #### Control de tajaderas
-
+- El guarda responsable abre esta interfaz web, teclea los cm de apertura y pulsa "Establecer". En ese momento, la lógica programada en python, detecta que la altura objetivo es mayor que la altura real y envía al Arduino la orden de subir la compuerta activando el motor correspondiente y el sentido de giro para que levante.
+Cuando detecte que la altura real sea igual o mayor que la objetivo, el motor para.
 <p align="center">
   <img src="/images/9-Compuerta.png" width="20%">
 </p>
+Misma operativa y lógica para bajar compuerta.
+Para cerrar del todo, simplemente se pulsa el boton web "Cerrar Totalmente"
 
 #### Monitorización de niveles y gráfico informativo
-
+- Se registra en base de datos la profundidad de la acequia de entrada al pantano cada hora.
 <p align="center">
   <img src="/images/7-NivelAcequia.png" width="20%">
   <img src="/images/7.1-Grafico.jpg" width="20%">
 </p>
 
 #### Programación horaria de apertura
-
+Permite programar como máximo hasta dos días furuos la apertura y cierre de las compuertas del panatano.
 <p align="center">
   <img src="/images/3-ProgramacionHoraria.png" width="20%">
 </p>
 
 #### Histórico de movimientos en Base de Datos MySQL
-
+Todos los movimiento se guardan en base de datos, pero la interfaz solo muestra los últimos movimientos
 <p align="center">
   <img src="/images/11-HistorialOperaciones.png" width="20%">
 </p>
@@ -248,3 +253,56 @@ Este enfoque permite mantener un nivel estable sin necesidad de intervención co
 - **Redes**:
   - Conectividad 3G (dongle USB Huawei)
   - Enlaces inalámbricos punto a punto (Ubiquiti LiteBeam)
+
+
+  ## 🛠️ Operación y soporte
+
+El sistema fue administrado de forma remota, permitiendo su mantenimiento y supervisión sin necesidad de desplazamiento físico.
+
+Como administrador del sistema, disponía de acceso a la red mediante VPN, pudiendo conectarme en cualquier momento a los nodos mediante SSH desde casa o desde el móvil.
+
+---
+
+### 🔧 Gestión remota
+
+- Acceso a las Raspberry Pi mediante SSH
+- Supervisión del estado de los servicios
+- Diagnóstico de fallos en tiempo real
+- Reinicio de servicios tras incidencias
+
+La lógica del sistema estaba implementada como servicios que se iniciaban automáticamente al arrancar las Raspberry Pi, garantizando la continuidad del sistema tras reinicios.
+
+---
+
+### ⚠️ Incidencias y mejoras
+
+Durante la operación del sistema se detectaron diversos fallos derivados principalmente de la falta de validación de datos en las primeras versiones.
+
+Un caso relevante fue:
+
+- Las lecturas recibidas (vía MQTT) debían ser valores numéricos enteros
+- En ocasiones, los mensajes llegaban con caracteres erróneos
+- Esto provocaba excepciones en el código Python y la caída del servicio
+
+#### 🧠 Solución implementada
+
+Se añadió una validación de entrada:
+
+- Si el dato recibido es un número válido → se procesa
+- Si no es válido → se descarta y se espera al siguiente mensaje
+
+---
+
+### 📈 Resultado
+
+Tras implementar esta mejora:
+
+- Se redujeron significativamente las caídas del sistema
+- Disminuyeron las incidencias reportadas por el operario
+- Se incrementó la estabilidad general del sistema
+
+---
+
+### 🧩 Consideraciones
+
+El sistema fue desarrollado en un contexto sin herramientas avanzadas de monitorización o automatización actuales, lo que implicó una gestión manual de incidencias y optimización progresiva del código.
