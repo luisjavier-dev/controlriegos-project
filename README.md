@@ -193,7 +193,7 @@ Las actualizaciones se realizan en tiempo real (≈1 segundo), proporcionando un
   <img src="/images/3-ProgramacionHoraria.png" width="20%">
 </p>
 
-#### Histórico de movimientos
+#### Histórico de movimientos en Base de Datos MySQL
 
 <p align="center">
   <img src="/images/11-HistorialOperaciones.png" width="20%">
@@ -228,3 +228,23 @@ Este enfoque permite mantener un nivel estable sin necesidad de intervención co
 - Mayor precisión en el control del nivel de agua
 - Supervisión remota en tiempo real
 - Automatización parcial del sistema hidráulico
+
+---
+
+## 🧰 Tecnologías utilizadas
+
+- **Python** (lógica de control en Raspberry Pi)
+- **Arduino (C/C++)** (lectura de sensores y control de actuadores)
+- **Raspberry Pi** (nodos de procesamiento)
+- **OpenVPN** (conectividad segura remota creación de certificados)
+- **HTML / CSS / JavaScript** (interfaces web de control)
+- **PHP como apoyo a funciones Javascript
+
+- **MySQL**:
+  - Gestión de usuarios y permisos
+  - Registro de niveles de agua
+  - Histórico de operaciones (auditoría de acciones)
+  
+- **Redes**:
+  - Conectividad 3G (dongle USB Huawei)
+  - Enlaces inalámbricos punto a punto (Ubiquiti LiteBeam)
