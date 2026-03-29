@@ -139,7 +139,7 @@ Además:
 - SSID WiFi LAN oculta.
 - Pantalla de login en la app con distintos permisos según roles.
   ![Pantalla Login](/images/1-Login.png)
-  <img src="/images/1-Login.png" width="300">
+  <img src="/images/1-Login.png" width="10%">
 
 ---
 
