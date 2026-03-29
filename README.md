@@ -238,7 +238,7 @@ Este enfoque permite mantener un nivel estable sin necesidad de intervención co
 - **Raspberry Pi** (nodos de procesamiento)
 - **OpenVPN** (conectividad segura remota creación de certificados)
 - **HTML / CSS / JavaScript** (interfaces web de control)
-- **PHP como apoyo a funciones Javascript
+- **PHP** Como apoyo a funciones Javascript
 
 - **MySQL**:
   - Gestión de usuarios y permisos
