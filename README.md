@@ -144,4 +144,4 @@ Además:
 
 A continuación se muestra el esquema completo de la infraestructura, incluyendo enlaces de red, tipo de conexión y dispositivos implicados:
 
-![Esquema de red](/diagramas/ConectividadRiegos.png)
+![Esquema de red](/images/ConectividadRiegos.png)
