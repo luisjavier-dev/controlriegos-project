@@ -1,6 +1,6 @@
 # 💧 Sistema IoT de Control de Riego – Villamayor (2018)
 
-Proyecto de automatización y monitorización remota de un sistema de riego basado en compuertas motorizadas, desarrollado en un entorno real con infraestructura limitada y control originalmente presencial y cobertura móvil justa.
+Proyecto de automatización y monitorización remota de un sistema de riego basado en compuertas motorizadas, desarrollado en un entorno real con infraestructura limitada y control originalmente presencial y cobertura móvil escasa.
 Toda la funcionalidad que aquí se detalla, fue la que el Sindicato de riegos de Villamayor exigía. Tanto desde un principio, como con el paso del tiempo y mientras se desarrollaba el sistema, se fueron incrementando sus peticiones.
 Sistema hecho totalmente a la medida de sus necesidades.
 
