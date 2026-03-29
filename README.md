@@ -180,10 +180,11 @@ Las actualizaciones se realizan en tiempo real (≈1 segundo), proporcionando un
   <img src="/images/9-Compuerta.png" width="20%">
 </p>
 
-#### Monitorización de niveles
+#### Monitorización de niveles y gráfico informativo
 
 <p align="center">
   <img src="/images/7-NivelAcequia.png" width="20%">
+  <img src="/images/7.1-Grafico.jpg" width="20%">
 </p>
 
 ---
@@ -197,7 +198,7 @@ El operario puede establecer un nivel objetivo de agua en la acequia de salida. 
 - Si el nivel supera el objetivo → cierre progresivo
 - Si el nivel es inferior → apertura progresiva
 <p align="center">
-  <img src="/images/8-Almenara1.png" width="20%">
+  <img src="/images/8-Almenara1.jpg" width="20%">
 </p>
 
 #### Ejemplo de funcionamiento:
