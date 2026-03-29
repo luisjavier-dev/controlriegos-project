@@ -187,6 +187,17 @@ Las actualizaciones se realizan en tiempo real (≈1 segundo), proporcionando un
   <img src="/images/7.1-Grafico.jpg" width="20%">
 </p>
 
+#### Programación horaria de apertura
+
+<p align="center">
+  <img src="/images/3-ProgramacionHoraria.png" width="20%">
+</p>
+
+#### Histórico de movimientos
+
+<p align="center">
+  <img src="/images/11-HistorialOperaciones.png" width="20%">
+</p>
 ---
 
 ### 🤖 Regulación automática
@@ -204,8 +215,8 @@ El operario puede establecer un nivel objetivo de agua en la acequia de salida. 
 #### Ejemplo de funcionamiento:
 
 - Nivel objetivo: **180 cm**
-- Nivel actual: **185 cm** → cierre de 1 cm por ciclo
-- Nivel actual: **175 cm** → apertura de 1 cm por ciclo
+- Nivel actual igual o mayor a: **185 cm** → cierre de 1 cm por ciclo
+- Nivel actual igual o menor a: **175 cm** → apertura de 1 cm por ciclo
 
 Este enfoque permite mantener un nivel estable sin necesidad de intervención constante.
 
