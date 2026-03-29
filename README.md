@@ -137,6 +137,9 @@ Además:
 - Acceso remoto restringido a la red privada virtual
 - Sistema aislado de accesos externos directos
 - SSID WiFi LAN oculta.
+- Pantalla de login en la app con distintos permisos según roles.
+  ![Pantalla Login](/images/Login.png)
+  <img src="/images/Login.png" width="300">
 
 ---
 
