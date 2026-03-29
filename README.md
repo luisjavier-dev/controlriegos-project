@@ -1,14 +1,13 @@
 # 💧 Sistema IoT de Control de Riego – Villamayor (2018)
 
 Proyecto de automatización y monitorización remota de un sistema de riego basado en compuertas motorizadas, desarrollado en un entorno real con infraestructura limitada y control originalmente presencial y cobertura móvil escasa.
-Toda la funcionalidad que aquí se detalla, fue la que el Sindicato de riegos de Villamayor exigía. Tanto desde un principio, como con el paso del tiempo y mientras se desarrollaba el sistema, se fueron incrementando sus peticiones.
-Sistema hecho totalmente a la medida de sus necesidades.
+Sistema desarrollado a medida según los requisitos del Sindicato de Riegos de Villamayor, evolucionando progresivamente en función de nuevas necesidades operativas. Tanto desde un principio, como con el paso del tiempo y mientras se desarrollaba el sistema, se fueron incrementando sus peticiones.
 
 ---
 
 ## 🧭 Contexto
 
-El sistema original requería supervisión manual continua por parte de un operario, con controles distribuidos en distintas zonas físicas separadas entre sí. Armarios eléctricos con selectores de maniobra (subir / bajar compuertas)
+El sistema original requería supervisión manual continua por parte de un operario, con controles distribuidos en distintas zonas físicas separadas entre sí. Armarios eléctricos con selectores de maniobra (reposo, subir y bajar compuertas)
 
 - Zona Pantano:
   - 3 compuertas motorizadas
@@ -85,9 +84,9 @@ Ambas zonas se conectan como clientes VPN, permitiendo acceso seguro desde cualq
 Este nodo actúa como punto central del sistema:
 
 - **Raspberry Pi 3**
-  - Ejecuta la lógica del sistema en Python y transmite por USB a Arduino los movimientos de motores.
+  - Ejecuta la lógica del sistema en Python y envía comandos al Arduino vía USB para el control de los motores.
   - Cliente OpenVPN
-  - Publica datos al servidor MQTT y pasan a web
+  - Publica datos en el broker MQTT, que posteriormente son consumidos por la interfaz web.
   - Gestiona la comunicación con Arduino vía USB
 
 - **Conectividad**
@@ -193,7 +192,7 @@ Para cerrar del todo, simplemente se pulsa el boton web "Cerrar Totalmente"
 </p>
 
 #### Programación horaria de apertura
-Permite programar como máximo hasta dos días futuros la apertura y cierre de las compuertas del panatano.
+Permite programar como máximo hasta dos días futuros la apertura y cierre de las compuertas del pantano.
 <p align="center">
   <img src="/images/3-ProgramacionHoraria.png" width="20%">
 </p>
@@ -241,7 +240,7 @@ Este enfoque permite mantener un nivel estable sin necesidad de intervención co
 - **Python** (lógica de control en Raspberry Pi)
 - **Arduino (C/C++)** (lectura de sensores y control de actuadores)
 - **Raspberry Pi** (nodos de procesamiento)
-- **OpenVPN** (conectividad segura remota creación de certificados)
+- **OpenVPN** Autenticación mediante certificados en OpenVPN 
 - **HTML / CSS / JavaScript** (interfaces web de control)
 - **PHP** Como apoyo a funciones Javascript
 
@@ -303,6 +302,10 @@ Tras implementar esta mejora:
 
 ---
 
-### 🧩 Consideraciones
+### 🧠 Conclusión
+
+Este proyecto representa el desarrollo completo de un sistema IoT en entorno real, abarcando desde el diseño de la arquitectura hasta su operación y mantenimiento en producción.
+
+Integra electrónica, redes, desarrollo software y resolución de incidencias reales, adaptándose a las limitaciones tecnológicas del entorno y evolucionando con el uso.
 
 El sistema fue desarrollado en un contexto sin herramientas avanzadas de monitorización o automatización actuales, lo que implicó una gestión manual de incidencias y optimización progresiva del código.
